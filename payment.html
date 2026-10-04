@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Checkout - Thala 7</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <header class="navbar">
+    <div class="brand">
+      <a href="index.html" class="logo">Thala <span class="accent">7.</span></a>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="product.html">About</a>
+      <a href="product.html">Brands</a>
+      <a href="product.html">More</a>
+      <a href="product.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Search sneakers..." />
+        <span class="icon">🔍</span>
+      </div>
+      <a href="cart.html" class="icon-link" title="Cart">🛒</a>
+      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Profile" class="avatar" />
+    </div>
+  </header>
+
+  <div class="page-container">
+    <div class="payment-layout">
+      <!-- Left Container: Checkout Details -->
+      <div class="payment-left">
+        <h2 class="sub-heading">Checkout</h2>
+
+        <form class="checkout-form" onsubmit="event.preventDefault(); alert('Order placed successfully!');">
+          <!-- Customer Email -->
+          <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" placeholder="example@domain.com" required />
+          </div>
+
+          <!-- Payment Options Card -->
+          <div class="card payment-method-card">
+            <div class="payment-tabs">
+              <label class="tab-label">
+                <input type="radio" name="pay-method" checked />
+                <span>Cards</span>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="pay-method" />
+                <span>Crypto</span>
+              </label>
+              <label class="tab-label">
+                <input type="radio" name="pay-method" />
+                <span>Net Banking</span>
+              </label>
+            </div>
+
+            <!-- Card Inputs Form Fields -->
+            <div class="form-fields">
+              <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label for="expiry">Expiry Date</label>
+                  <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required />
+                </div>
+                <div class="form-group flex-1">
+                  <label for="cvv">CVV</label>
+                  <input type="password" id="cvv" placeholder="123" maxlength="4" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group flex-1">
+                  <label for="country">Country</label>
+                  <select id="country">
+                    <option value="India">India</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                  </select>
+                </div>
+                <div class="form-group flex-1">
+                  <label for="zipcode">ZIP / Postal Code</label>
+                  <input type="text" id="zipcode" placeholder="302020" required />
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Container: Order Summary -->
+      <div class="payment-right">
+        <h2 class="sub-heading">Order Summary</h2>
+
+        <div class="card coupon-card">
+          <label for="checkout-coupon">Apply Discount</label>
+          <div class="coupon-group">
+            <input type="text" id="checkout-coupon" placeholder="COUPON CODE" />
+            <button class="btn btn-blue">Apply</button>
+          </div>
+        </div>
+
+        <div class="card summary-card">
+          <div class="summary-line">
+            <span>Sub Total</span>
+            <span>₹4,700</span>
+          </div>
+          <div class="summary-line">
+            <span>Taxes</span>
+            <span>₹199</span>
+          </div>
+          <div class="summary-line">
+            <span>Discount</span>
+            <span>₹0</span>
+          </div>
+          <hr class="summary-divider" />
+          <div class="summary-line total-line">
+            <span>Total</span>
+            <span>₹4,999</span>
+          </div>
+
+          <button type="submit" class="btn btn-orange btn-block">Pay Now ₹4,999</button>
+
+          <div class="trust-badges">
+            <span class="badge-item">🔒 Verified by Razorpay</span>
+            <span class="badge-item">🛡️ SSL 256-bit Encryption</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
